@@ -2,7 +2,7 @@ package com.rinoindraw.capstonerino.network
 
 
 import com.rinoindraw.capstonerino.database.auth.AuthService
-import com.rinoindraw.capstonerino.database.repository.StoryService
+import com.rinoindraw.capstonerino.database.history.ApiService
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -17,6 +17,6 @@ class ServiceModule {
     fun provideAuthService(retrofit: Retrofit): AuthService = retrofit.create(AuthService::class.java)
 
     @Provides
-    fun provideStoryService(retrofit: Retrofit): StoryService = retrofit.create(StoryService::class.java)
+    fun provideApiService(retrofit: Retrofit): ApiService = retrofit.create(ApiService::class.java)
 
 }

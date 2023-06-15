@@ -6,10 +6,8 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Handler
 import android.os.Looper
-import android.widget.ImageView
 import androidx.appcompat.app.AppCompatDelegate
 import androidx.constraintlayout.widget.ConstraintLayout
-import androidx.constraintlayout.widget.ConstraintSet.Constraint
 import com.rinoindraw.capstonerino.ui.auth.AuthActivity
 import com.rinoindraw.capstonerino.ui.main.MainActivity
 import com.rinoindraw.capstonerino.R

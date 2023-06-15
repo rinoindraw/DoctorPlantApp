@@ -9,14 +9,14 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:background="@drawable/capstone_bg"
+        android:background="@drawable/wallpaper_auth_new"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvWelcomeTitle"
-        style="@style/StoryTextContent.Title"
+        style="@style/TextContent.Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="32dp"
@@ -30,7 +30,7 @@
 
     <TextView
         android:id="@+id/tvWelcomeDesc"
-        style="@style/StoryTextContent.EditTextTitle"
+        style="@style/TextContent.EditTextTitle"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/dimen_32dp"
@@ -125,7 +125,7 @@
             style="@style/button_style"
             android:alpha="0"
             tools:alpha="1"
-            android:textColor="@color/dark_green"
+            android:textColor="@color/very_dark_green"
             android:text="@string/label_is_have_account"/>
 
         <TextView
@@ -133,7 +133,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:textColor="@color/soft_green"
+            android:textColor="@color/blue_green"
             style="@style/button_style"
             android:alpha="0"
             tools:alpha="1"

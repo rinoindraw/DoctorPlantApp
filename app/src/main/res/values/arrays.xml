@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <array name="menu_options">
+        <item>chili</item>
+        <item>rice</item>
+        <item>tomato</item>
+    </array>
+</resources>

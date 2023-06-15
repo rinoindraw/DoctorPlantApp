@@ -1,26 +1,23 @@
 package com.rinoindraw.capstonerino.database.auth
 
+import com.rinoindraw.capstonerino.database.model.LoginRequest
 import com.rinoindraw.capstonerino.database.model.LoginResponse
+import com.rinoindraw.capstonerino.database.model.RegisterRequest
 import com.rinoindraw.capstonerino.database.model.RegisterResponse
-import retrofit2.http.Field
-import retrofit2.http.FormUrlEncoded
-import retrofit2.http.POST
+import retrofit2.http.*
 
 interface AuthService {
 
-    @FormUrlEncoded
+    @Headers("Content-Type: application/json")
     @POST("login")
     suspend fun loginUser(
-        @Field("email") email: String,
-        @Field("password") password: String
+        @Body request: LoginRequest
     ): LoginResponse
 
-    @FormUrlEncoded
+    @Headers("Content-Type: application/json")
     @POST("register")
     suspend fun registerUser(
-        @Field("name") name: String,
-        @Field("email") email: String,
-        @Field("password") password: String
+        @Body request: RegisterRequest
     ): RegisterResponse
 
 }

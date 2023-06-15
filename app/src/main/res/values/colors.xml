@@ -1,27 +1,15 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="purple_200">#FFBB86FC</color>
-    <color name="purple_500">#FF6200EE</color>
-    <color name="purple_700">#FF3700B3</color>
-    <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-    <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
-
     <color name="colorDarkBlue">#1D4E5F</color>
-    <color name="colorLightGreen">#9ED763</color>
-    <color name="colorGreen">#37A479</color>
-
     <color name="colorBlackDim">#74000000</color>
-    <color name="colorGrey">#CECECE</color>
-
     <color name="blue_sky">#00d7ff</color>
-    <color name="dark_blue_sky">#537FE7</color>
-
     <color name="app_window">#F9FBE7</color>
     <color name="dark_green">#046425</color>
-    <color name="soft_green">#A4DA22</color>
     <color name="blue_green">#52CBAC</color>
     <color name="very_dark_green">#305E5C</color>
     <color name="warm_red">#D25380</color>
+    <color name="auth_blue">#E7FCDD</color>
+    <color name="splash_dark_blue">#262632</color>
 </resources>

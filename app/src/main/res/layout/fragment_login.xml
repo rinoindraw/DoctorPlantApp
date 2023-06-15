@@ -10,7 +10,7 @@
         android:id="@+id/view"
         android:layout_width="match_parent"
         android:layout_height="180dp"
-        android:background="@drawable/capstone_bg"
+        android:background="@drawable/wallpaper_auth_new"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
@@ -40,21 +40,20 @@
         android:layout_width="154dp"
         android:layout_height="154dp"
         android:layout_marginTop="81dp"
-        android:src="@drawable/capstone_logo"
+        android:src="@drawable/capstone_logo_new"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/tvWelcomeTitle"
-        style="@style/StoryTextContent.Title"
+        style="@style/TextContent.Title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="14dp"
-        android:text="@string/login_tag"
+        android:text="@string/app_name"
         android:textSize="@dimen/dimen_32sp"
-        android:alpha="0"
-        tools:alpha="1"
+        android:alpha="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/imgLogo" />
@@ -65,14 +64,13 @@
         android:layout_height="51dp"
         android:layout_marginHorizontal="@dimen/dimen_16dp"
         android:layout_marginTop="@dimen/dimen_8dp"
-        android:textColor="@color/dark_green"
+        android:textColor="@color/very_dark_green"
         android:textStyle="bold"
         android:text="@string/login_continue"
         android:textSize="@dimen/dimen_16sp"
         style="@style/button_style"
-        android:alpha="0"
+        android:alpha="1"
         android:gravity="center_horizontal|top"
-        tools:alpha="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tvWelcomeTitle" />
@@ -87,8 +85,7 @@
         android:padding="@dimen/dimen_16dp"
         android:translationZ="0dp"
         android:hint="@string/your_email"
-        android:alpha="0"
-        tools:alpha="1"
+        android:alpha="1"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@id/tvWelcomeDesc"
@@ -101,15 +98,14 @@
         android:layout_height="wrap_content"
         android:layout_marginHorizontal="@dimen/dimen_16dp"
         android:layout_marginTop="8dp"
-        android:alpha="0"
+        android:alpha="1"
         android:hint="@string/label_password"
         android:inputType="textPassword"
         android:padding="@dimen/dimen_16dp"
         android:translationZ="0dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/edtEmail"
-        tools:alpha="1" />
+        app:layout_constraintTop_toBottomOf="@+id/edtEmail" />
 
     <Button
         android:id="@+id/btnLogin"
@@ -120,8 +116,7 @@
         android:text="@string/action_login"
         android:translationZ="0dp"
         style="@style/button_style"
-        android:alpha="0"
-        tools:alpha="1"
+        android:alpha="1"
         app:backgroundTint="@null"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -141,10 +136,9 @@
             android:id="@+id/tvIsHaventAccount"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textColor="@color/dark_green"
+            android:textColor="@color/very_dark_green"
             style="@style/button_style"
-            android:alpha="0"
-            tools:alpha="1"
+            android:alpha="1"
             android:text="@string/label_is_havent_account"/>
 
         <TextView
@@ -152,10 +146,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textStyle="bold"
-            android:textColor="@color/soft_green"
+            android:textColor="@color/blue_green"
             style="@style/button_style"
-            android:alpha="0"
-            tools:alpha="1"
+            android:alpha="1"
             android:layout_marginStart="@dimen/dimen_4dp"
             android:text="@string/action_to_register"/>
 

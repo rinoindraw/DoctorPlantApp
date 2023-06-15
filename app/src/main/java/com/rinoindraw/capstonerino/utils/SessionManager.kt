@@ -8,7 +8,6 @@ class SessionManager(context: Context) {
 
     companion object {
         private const val PREF_NAME = "Session"
-        private const val PRIVATE_MODE = 0
         private const val KEY_AUTH_TOKEN = "auth_token"
     }
 
@@ -20,6 +19,10 @@ class SessionManager(context: Context) {
 
     fun fetchAuthToken(): String? {
         return pref.getString(KEY_AUTH_TOKEN, null)
+    }
+
+    fun getUsername(): String? {
+        return pref.getString(ConstVal.KEY_USER_NAME, "")
     }
 
     fun clearAuthToken() {

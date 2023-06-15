@@ -25,10 +25,9 @@ class NetworkModule {
 
     @Provides
     fun provideRetrofit(client: OkHttpClient): Retrofit = Retrofit.Builder()
-        .baseUrl("https://story-api.dicoding.dev/v1/")
+        .baseUrl("http://34.101.201.247")
         .addConverterFactory(GsonConverterFactory.create())
         .client(client)
         .build()
-
 
 }

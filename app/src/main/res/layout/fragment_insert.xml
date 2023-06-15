@@ -26,18 +26,28 @@
             android:id="@+id/tvProfile"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
+            android:layout_marginStart="16dp"
             android:layout_marginTop="32dp"
             android:fontFamily="@font/tilt_warp"
+            android:text="@string/insert"
             android:textColor="@color/white"
             android:textSize="@dimen/dimen_24sp"
             android:textStyle="bold"
-            android:text="@string/insert"
-            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/imgBack"
             app:layout_constraintTop_toTopOf="parent" />
 
-
-
+        <ImageButton
+            android:id="@+id/imgBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="32dp"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="@string/img_back"
+            android:padding="2dp"
+            android:src="@drawable/baseline_arrow_back_ios_24"
+            app:layout_constraintBottom_toBottomOf="@+id/tvProfile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvProfile" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -53,26 +63,12 @@
         app:layout_constraintTop_toBottomOf="@+id/header_home"
         tools:ignore="ImageContrastCheck" />
 
-    <com.rinoindraw.capstonerino.ui.customview.AppDefaultEditText
-        android:id="@+id/edt"
-        android:layout_width="320dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="64dp"
-        android:alpha="1"
-        android:hint="Ini gadipake, ini buat requirement api dicoding yang harus ada description"
-        android:maxLines="1"
-        android:padding="@dimen/dimen_16dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/content_home"
-        tools:alpha="0" />
-
     <androidx.constraintlayout.widget.Guideline
-        android:id="@+id/guideline_vertical"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:orientation="vertical"
-        app:layout_constraintGuide_percent="0.5" />
+    android:id="@+id/guideline_vertical"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:orientation="vertical"
+    app:layout_constraintGuide_percent="0.5" />
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/content_home"
@@ -159,6 +155,30 @@
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
+    <TextView
+        android:id="@+id/tvDropdown"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="24dp"
+        android:fontFamily="@font/gabriela"
+        android:text="@string/dropdown_desc"
+        android:textColor="@color/blue_green"
+        android:textSize="@dimen/dimen_20sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/content_home" />
+
+    <Spinner
+        android:id="@+id/menuSpinner"
+        style="@style/SpinnerStyle"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tvDropdown"
+        tools:entries="@array/menu_options" />
 
     <ProgressBar
         android:id="@+id/progress_bar"
@@ -177,8 +197,5 @@
         android:background="@color/colorBlackDim"
         android:elevation="@dimen/dimen_2dp"
         android:visibility="gone" />
-
-
-
 
 </androidx.constraintlayout.widget.ConstraintLayout>

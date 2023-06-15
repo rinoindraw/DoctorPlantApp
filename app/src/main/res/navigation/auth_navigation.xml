@@ -20,6 +20,7 @@
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpToInclusive="false"/>
     </fragment>
+
     <fragment
         android:id="@+id/registerFragment"
         android:name="com.rinoindraw.capstonerino.ui.register.RegisterFragment"

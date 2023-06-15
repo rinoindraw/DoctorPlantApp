@@ -3,13 +3,12 @@
 
     <item
         android:id="@+id/navigation_home"
-        android:icon="@drawable/capstone_logo"
+        android:icon="@drawable/capstone_logo_new"
         android:title="@string/title_home" />
 
     <item
         android:id="@+id/navigation_profile"
         android:icon="@drawable/baseline_person_24"
         android:title="@string/profile" />
-
 
 </menu>

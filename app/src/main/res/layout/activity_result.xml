@@ -1,0 +1,253 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ui.result.ResultActivity">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/header_home"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/rounded_background"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvProfile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="16dp"
+            android:layout_marginTop="32dp"
+            android:fontFamily="@font/tilt_warp"
+            android:text="@string/result_header"
+            android:textColor="@color/white"
+            android:textSize="@dimen/dimen_24sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/imgBack"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <ImageButton
+            android:id="@+id/imgBack"
+            android:layout_width="48dp"
+            android:layout_height="48dp"
+            android:layout_marginStart="32dp"
+            android:backgroundTint="@android:color/transparent"
+            android:contentDescription="@string/img_back"
+            android:padding="2dp"
+            android:src="@drawable/baseline_arrow_back_ios_24"
+            app:layout_constraintBottom_toBottomOf="@+id/tvProfile"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvProfile" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.core.widget.NestedScrollView
+        android:id="@+id/scroll_view"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/header_home">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginVertical="16dp">
+
+            <ImageView
+                android:id="@+id/iv_image"
+                android:layout_width="match_parent"
+                android:layout_height="250dp"
+                android:layout_marginStart="8dp"
+                android:layout_marginEnd="8dp"
+                android:contentDescription="@string/plant_illustration"
+                android:transitionName="history_image"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                tools:src="@drawable/capstone_logo_new" />
+
+            <TextView
+                android:id="@+id/plant_type_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="8dp"
+                android:transitionName="description"
+                style="@style/detail_style_title"
+                android:text="@string/plant_type"
+                app:layout_constraintEnd_toEndOf="@id/iv_image"
+                app:layout_constraintStart_toStartOf="@+id/iv_image"
+                app:layout_constraintTop_toBottomOf="@+id/iv_image" />
+
+            <TextView
+                android:id="@+id/plant_type"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:transitionName="description"
+                style="@style/detail_style"
+                app:layout_constraintEnd_toEndOf="@id/plant_type_title"
+                app:layout_constraintStart_toStartOf="@+id/plant_type_title"
+                app:layout_constraintTop_toBottomOf="@+id/plant_type_title"
+                tools:text="@string/dummy_plant" />
+
+            <TextView
+                android:id="@+id/plant_disease_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:transitionName="description"
+                style="@style/detail_style_warm"
+                android:text="@string/plant_disease"
+                app:layout_constraintEnd_toEndOf="@id/plant_type"
+                app:layout_constraintStart_toStartOf="@+id/plant_type"
+                app:layout_constraintTop_toBottomOf="@+id/plant_type" />
+
+            <TextView
+                android:id="@+id/result_scan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:transitionName="description"
+                style="@style/detail_style"
+                app:layout_constraintEnd_toEndOf="@+id/plant_disease_title"
+                app:layout_constraintStart_toStartOf="@+id/plant_disease_title"
+                app:layout_constraintTop_toBottomOf="@+id/plant_disease_title"
+                tools:text="@string/dummy_result" />
+
+            <TextView
+                android:id="@+id/plant_desc_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:transitionName="description"
+                style="@style/detail_style_title"
+                android:text="@string/plant_desc"
+                app:layout_constraintEnd_toEndOf="@id/result_scan"
+                app:layout_constraintStart_toStartOf="@+id/result_scan"
+                app:layout_constraintTop_toBottomOf="@+id/result_scan" />
+
+            <TextView
+                android:id="@+id/desc_scan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:transitionName="description"
+                style="@style/detail_style"
+                app:layout_constraintEnd_toEndOf="@+id/plant_desc_title"
+                app:layout_constraintStart_toStartOf="@+id/plant_desc_title"
+                app:layout_constraintTop_toBottomOf="@+id/plant_desc_title"
+                tools:text="@string/dummy_desc" />
+
+            <TextView
+                android:id="@+id/plant_cause_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:transitionName="description"
+                style="@style/detail_style_warm"
+                android:text="@string/plant_cause"
+                app:layout_constraintEnd_toEndOf="@id/desc_scan"
+                app:layout_constraintStart_toStartOf="@+id/desc_scan"
+                app:layout_constraintTop_toBottomOf="@+id/desc_scan" />
+
+            <TextView
+                android:id="@+id/penyebab_scan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:transitionName="description"
+                style="@style/detail_style"
+                app:layout_constraintEnd_toEndOf="@+id/plant_cause_title"
+                app:layout_constraintStart_toStartOf="@+id/plant_cause_title"
+                app:layout_constraintTop_toBottomOf="@+id/plant_cause_title"
+                tools:text="@string/dummy_penyebab" />
+
+            <TextView
+                android:id="@+id/plant_solution_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:transitionName="description"
+                style="@style/detail_style_title"
+                android:text="@string/plant_solution"
+                app:layout_constraintEnd_toEndOf="@id/penyebab_scan"
+                app:layout_constraintStart_toStartOf="@+id/penyebab_scan"
+                app:layout_constraintTop_toBottomOf="@+id/penyebab_scan" />
+
+            <TextView
+                android:id="@+id/solusi_scan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:transitionName="description"
+                style="@style/detail_style"
+                app:layout_constraintEnd_toEndOf="@+id/plant_solution_title"
+                app:layout_constraintStart_toStartOf="@+id/plant_solution_title"
+                app:layout_constraintTop_toBottomOf="@+id/plant_solution_title"
+                tools:text="@string/dummy_solusi" />
+
+            <TextView
+                android:id="@+id/plant_source_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:transitionName="description"
+                style="@style/detail_style_warm"
+                android:text="@string/plant_source"
+                app:layout_constraintEnd_toEndOf="@id/solusi_scan"
+                app:layout_constraintStart_toStartOf="@+id/solusi_scan"
+                app:layout_constraintTop_toBottomOf="@+id/solusi_scan" />
+
+            <TextView
+                android:id="@+id/source_scan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:transitionName="description"
+                style="@style/detail_style"
+                app:layout_constraintEnd_toEndOf="@+id/plant_source_title"
+                app:layout_constraintStart_toStartOf="@+id/plant_source_title"
+                app:layout_constraintTop_toBottomOf="@+id/plant_source_title"
+                tools:text="@string/dummy_source" />
+
+            <TextView
+                android:id="@+id/plant_writer_title"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:transitionName="description"
+                style="@style/detail_style_title"
+                android:text="@string/plant_writer"
+                app:layout_constraintEnd_toEndOf="@id/source_scan"
+                app:layout_constraintStart_toStartOf="@+id/source_scan"
+                app:layout_constraintTop_toBottomOf="@+id/source_scan" />
+
+            <TextView
+                android:id="@+id/penulis_scan"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="3dp"
+                android:transitionName="description"
+                style="@style/detail_style"
+                app:layout_constraintEnd_toEndOf="@+id/plant_writer_title"
+                app:layout_constraintStart_toStartOf="@+id/plant_writer_title"
+                app:layout_constraintTop_toBottomOf="@+id/plant_writer_title"
+                tools:text="@string/dummy_penulis" />
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+    </androidx.core.widget.NestedScrollView>
+
+</androidx.constraintlayout.widget.ConstraintLayout>

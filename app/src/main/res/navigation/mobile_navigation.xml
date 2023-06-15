@@ -20,16 +20,55 @@
             app:popEnterAnim="@anim/nav_default_pop_enter_anim"
             app:popExitAnim="@anim/nav_default_pop_exit_anim"
             app:popUpToInclusive="false"/>
+        <action
+            android:id="@+id/action_navigation_home_to_historyFragment"
+            app:destination="@id/historyFragment"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpToInclusive="false"/>
     </fragment>
+
     <fragment
         android:id="@+id/navigation_profile"
         android:name="com.rinoindraw.capstonerino.ui.profile.ProfileFragment"
         android:label="fragment_history"
         tools:layout="@layout/fragment_profile" />
+
     <fragment
         android:id="@+id/insertFragment"
         android:name="com.rinoindraw.capstonerino.ui.insert.InsertFragment"
         android:label="fragment_insert"
-        tools:layout="@layout/fragment_insert" />
+        tools:layout="@layout/fragment_insert" >
+        <action
+            android:id="@+id/action_insertFragment_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/navigation_home"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/historyFragment"
+        android:name="com.rinoindraw.capstonerino.ui.history.HistoryFragment"
+        android:label="HistoryFragment"
+        tools:layout="@layout/fragment_history">
+        <action
+            android:id="@+id/action_historyFragment_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:enterAnim="@anim/nav_default_enter_anim"
+            app:exitAnim="@anim/nav_default_exit_anim"
+            app:launchSingleTop="false"
+            app:popEnterAnim="@anim/nav_default_pop_enter_anim"
+            app:popExitAnim="@anim/nav_default_pop_exit_anim"
+            app:popUpTo="@+id/navigation_home"
+            app:popUpToInclusive="true"/>
+    </fragment>
 
 </navigation>

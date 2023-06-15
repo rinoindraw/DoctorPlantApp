@@ -32,7 +32,7 @@ class AppDefaultEditText : AppCompatEditText {
         compoundDrawablePadding = 16
         setDrawable(defaultIconDrawable)
 
-        backgroundTintList = ContextCompat.getColorStateList(context, R.color.dark_green)
+        backgroundTintList = ContextCompat.getColorStateList(context, R.color.very_dark_green)
 
         addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(p0: CharSequence?, p1: Int, p2: Int, p3: Int) {

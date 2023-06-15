@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.appcompat.app.AlertDialog
-import androidx.navigation.Navigation
 import com.rinoindraw.capstonerino.R
 import com.rinoindraw.capstonerino.databinding.FragmentProfileBinding
 import com.rinoindraw.capstonerino.ui.auth.AuthActivity
@@ -84,7 +83,5 @@ class ProfileFragment : Fragment() {
         val alert = alertDialog.create()
         alert.show()
     }
-
-
 
 }

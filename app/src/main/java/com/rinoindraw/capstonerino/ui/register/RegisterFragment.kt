@@ -19,7 +19,6 @@ import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.Job
 import kotlinx.coroutines.launch
 
-
 @Suppress("DEPRECATION")
 @AndroidEntryPoint
 class RegisterFragment : Fragment() {
@@ -92,7 +91,7 @@ class RegisterFragment : Fragment() {
 
     private fun registerUser() {
         val name = binding.edtName.text.toString().trim()
-        val email = binding.edtEmail.text.toString().trim()
+        val username = binding.edtEmail.text.toString().trim()
         val password = binding.edtPassword.text.toString()
         showLoading(true)
 
@@ -100,23 +99,34 @@ class RegisterFragment : Fragment() {
             if (registerJob.isActive) registerJob.cancel()
 
             registerJob = launch {
-                registerViewModel.registerUser(name, email, password).collect { result ->
-                    result.onSuccess {
-                        Toast.makeText(
-                            requireContext(),
-                            getString(R.string.registration_success),
-                            Toast.LENGTH_SHORT
-                        ).show()
+                registerViewModel.registerUser(name, username, password).collect { result ->
+                    result.onSuccess { response ->
+                        if (response.code == 200) {
+                            Toast.makeText(
+                                requireContext(),
+                                getString(R.string.registration_success),
+                                Toast.LENGTH_SHORT
+                            ).show()
 
-                        findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+                            findNavController().navigate(R.id.action_registerFragment_to_loginFragment)
+                        } else {
+                            Snackbar.make(
+                                binding.root,
+                                response.message,
+                                Snackbar.LENGTH_SHORT
+                            ).show()
+
+                            showLoading(false)
+                        }
                     }
 
-                    result.onFailure {
+                    result.onFailure { error ->
                         Snackbar.make(
                             binding.root,
-                            getString(R.string.registration_error_message),
+                            error.localizedMessage ?: getString(R.string.registration_error_message),
                             Snackbar.LENGTH_SHORT
                         ).show()
+
                         showLoading(false)
                     }
                 }

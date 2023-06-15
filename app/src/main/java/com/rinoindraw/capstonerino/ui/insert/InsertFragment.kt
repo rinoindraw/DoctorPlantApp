@@ -1,48 +1,35 @@
 package com.rinoindraw.capstonerino.ui.insert
 
-import android.Manifest
-import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
-import android.content.pm.PackageManager
 import android.graphics.Bitmap
 import android.graphics.BitmapFactory
-import android.location.Location
 import android.net.Uri
 import android.os.Bundle
 import android.provider.MediaStore
-import android.provider.Settings
-import android.provider.Settings.Global.getString
-import android.util.Log
-import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
 import androidx.activity.result.contract.ActivityResultContracts
-import androidx.core.content.ContentProviderCompat.requireContext
-import androidx.core.content.ContextCompat
 import androidx.core.content.FileProvider
 import androidx.exifinterface.media.ExifInterface
+import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import androidx.lifecycle.lifecycleScope
 import androidx.navigation.Navigation
-import androidx.navigation.fragment.NavHostFragment.Companion.findNavController
-import androidx.navigation.fragment.findNavController
 import androidx.paging.ExperimentalPagingApi
 import com.bumptech.glide.load.resource.bitmap.TransformationUtils
-import com.google.android.gms.location.FusedLocationProviderClient
-import com.google.android.gms.location.LocationServices
 import com.google.android.material.snackbar.Snackbar
 import com.rinoindraw.capstonerino.R
 import com.rinoindraw.capstonerino.databinding.FragmentInsertBinding
+import com.rinoindraw.capstonerino.ui.customview.CustomSpinnerAdapter
+import com.rinoindraw.capstonerino.ui.result.ResultActivity
 import com.rinoindraw.capstonerino.utils.*
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.launch
-import okhttp3.MediaType.Companion.toMediaType
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
 import okhttp3.MultipartBody
-import okhttp3.RequestBody
 import okhttp3.RequestBody.Companion.asRequestBody
 import okhttp3.RequestBody.Companion.toRequestBody
 import java.io.File
@@ -56,7 +43,6 @@ class InsertFragment : Fragment() {
 
     private lateinit var binding: FragmentInsertBinding
     private lateinit var currentPhotoPath: String
-    private lateinit var fusedLocationClient: FusedLocationProviderClient
 
     private var getFile: File? = null
     private lateinit var pref: SessionManager
@@ -128,6 +114,12 @@ class InsertFragment : Fragment() {
         pref = SessionManager(requireContext())
         token = pref.fetchAuthToken().toString()
 
+        val spinner = binding.menuSpinner
+        val itemList = listOf("chili", "rice", "tomato")
+
+        val adapter = CustomSpinnerAdapter(requireContext(), itemList)
+        spinner.adapter = adapter
+
         initAction()
 
     }
@@ -145,17 +137,18 @@ class InsertFragment : Fragment() {
             btnUpload.setOnClickListener {
                 uploadStory()
             }
-        }
+            imgBack.setOnClickListener(
+                Navigation.createNavigateOnClickListener(R.id.action_insertFragment_to_navigation_home)
+            )
 
+        }
 
     }
 
     private fun uploadStory() {
+
         showLoading(true)
-
         var isValid = true
-
-        val etDescription = binding.edt
 
         if (getFile == null) {
             showSnackbar(getString(R.string.error_empty_image))
@@ -165,33 +158,30 @@ class InsertFragment : Fragment() {
         if (isValid) {
             lifecycleScope.launchWhenStarted {
                 launch {
-                    ///
-                    val description =
-                        etDescription.text.toString().toRequestBody("text/plain".toMediaType())
-                    ///
+                    val username = pref.getUsername().toString().toRequestBody("text/plain".toMediaTypeOrNull())
+                    val plant = binding.menuSpinner.selectedItem.toString().toRequestBody("text/plain".toMediaTypeOrNull())
 
                     val file = MediaUtils.reduceFileImage(getFile as File)
-                    val requestImageFile = file.asRequestBody("image/jpeg".toMediaTypeOrNull())
+                    val requestImageFile = file.asRequestBody("image/png".toMediaTypeOrNull())
                     val imageMultipart: MultipartBody.Part = MultipartBody.Part.createFormData(
-                        "photo",
+                        "image",
                         file.name,
                         requestImageFile
                     )
 
-                    viewModel.uploadImage(token, imageMultipart, description )
+                    viewModel.uploadImage(username ,plant,  imageMultipart )
                         .collect { response ->
-                            response.onSuccess {
+                            response.onSuccess { resultData ->
                                 Toast.makeText(
                                     requireContext(),
                                     getString(R.string.message_success_upload),
                                     Toast.LENGTH_SHORT
                                 ).show()
-
-                                // Navigate back to the same fragment after successful upload
-                                findNavController().navigateUp()
-                                findNavController().navigate(R.id.navigation_home)
+                                val intent = Intent(requireContext(), ResultActivity::class.java)
+                                intent.putExtra(ResultActivity.EXTRA_RESULT_DATA, resultData)
+                                startActivity(intent)
+                                requireActivity().finish()
                             }
-
                             response.onFailure {
                                 showLoading(false)
                                 showSnackbar(getString(R.string.message_failed_upload))
@@ -249,7 +239,4 @@ class InsertFragment : Fragment() {
         ).show()
     }
 
-    companion object {
-        private const val TAG = "CreateStoryActivity"
-    }
 }

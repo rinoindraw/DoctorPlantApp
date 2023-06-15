@@ -1,15 +1,12 @@
 <resources>
-    <string name="app_name">My Capstone</string>
+    <string name="app_name">Doctor Plant</string>
     <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="error_empty_name">Please Insert Your Name</string>
     <string name="error_empty_email">Please Insert Your Email</string>
     <string name="error_invalid_email">Your Email Is Invalid</string>
     <string name="error_empty_password">Please Insert Your Password</string>
     <string name="error_password_more_6">Password must be at least 8 characters</string>
-    <string name="label_email">Email</string>
     <string name="label_password">Password...</string>
-    <string name="login_tag">Login</string>
     <string name="welcome_tag">Let\'s Register</string>
     <string name="login_continue">Welcome to our innovative agricultural platform.</string>
     <string name="your_email">Email...</string>
@@ -20,8 +17,6 @@
     <string name="label_is_have_account">Already have account ?</string>
     <string name="action_to_register">Register here</string>
     <string name="action_to_login">Login here</string>
-    <string name="insert_email">Insert Email</string>
-    <string name="label_nama">Name</string>
     <string name="register_text">Please register to join the full experience.</string>
     <string name="login_success_message">Login Success</string>
     <string name="login_error_message">Login Failed</string>
@@ -33,7 +28,6 @@
     <string name="insert">Insert</string>
     <string name="history">History</string>
     <string name="profile">Profile</string>
-    <string name="home_welcome">Welcome Back</string>
     <string name="welcome_greet">Let\'s start your agricultural innovation.</string>
     <string name="insert_icon">Insert</string>
     <string name="action_logout">LogOut</string>
@@ -47,4 +41,30 @@
     <string name="message_success_upload">Upload Success</string>
     <string name="message_failed_upload">Failed To Upload</string>
     <string name="error_empty_image">Please Insert Image</string>
+    <string name="label_greeting_alt">Hello, Agricultural Enthusiasts!</string>
+    <string name="plant_illustration">Plant Illustration</string>
+    <string name="dummy_plant">chili</string>
+    <string name="dummy_result">leaf_spot</string>
+    <string name="dummy_desc">Bercak daun atau biasa disebut dengan Frog Eyes. Penyebab penyakit ini adalah Cercospora capsici sejenis cendawan atau Jamur antagonis perusak tanaman. Penyakit bercak daun cabai adalah salah satu penyakit terpenting yang menyerang cabai di Indonesia. Penyakit ini distimulir oleh kondisi lembab dan suhu relatif tinggi. Penyakit bercak daun cabai dapat menyebabkan kerusakan sejak dari persemaian sampai tanaman cabai berbuah. Penyakit ini menyebabkan masalah serius terhadap perkembangan tanaman cabai. Serangan jamur ini berkembang pesat pada saat musim hujan dengan kondisi lahan yang lembab, sehingga perlu adanya pengaturan jarak tanam yang lebih lebar untuk mengatur kelembabannya.</string>
+    <string name="dummy_penyebab">Penyebab penyakit ini adalah Cercospora capsici sejenis cendawan atau Jamur antagonis perusak tanaman</string>
+    <string name="dummy_source">http://cybex.pertanian.go.id/mobile/artikel/99861/Bercak-Daun-Pada-Tanaman-Cabe/</string>
+    <string name="dummy_penulis">Lina Andriani, S.Pt. PPL Kecamatan Banyumanik.</string>
+    <string name="dummy_solusi">Pengendalian secara mekanis dilakukan dengan mencabut atau memusnahkan tanaman yang terserang, melakukan rotasi tanaman, serta menanam bibit yang bebas penyakit pada lahan yang tidak terkontaminasi penyakit.</string>
+    <string name="dropdown_desc">Choose your plant</string>
+    <string name="story_h_illustration">History Image</string>
+    <string name="history_desc">Bercak daun atau biasa disebut dengan Frog Eyes. Penyebab penyakit ini adalah Cercospora capsici sejenis cendawan atau Jamur antagonis perusak tanaman. Penyakit bercak daun cabai adalah salah satu penyakit terpenting yang menyerang cabai di Indonesia. Penyakit ini distimulir oleh kondisi lembab dan suhu relatif tinggi. Penyakit bercak daun cabai dapat menyebabkan kerusakan sejak dari persemaian sampai tanaman cabai berbuah. Penyakit ini menyebabkan masalah serius terhadap perkembangan tanaman cabai. Serangan jamur ini berkembang pesat pada saat musim hujan dengan kondisi lahan yang lembab, sehingga perlu adanya pengaturan jarak tanam yang lebih lebar untuk mengatur kelembabannya.\",         \"penyebab\": \"Penyebab penyakit ini adalah Cercospora capsici sejenis cendawan atau Jamur antagonis perusak tanaman</string>
+    <string name="history_title">leaf_spot</string>
+    <string name="detail_history">Detail History</string>
+    <string name="result_header">Result</string>
+    <string name="you_dont_have_history">You Don\'t Have History</string>
+    <string name="history_load">History Load Successfully</string>
+    <string name="plant_type">Plant Type</string>
+    <string name="plant_disease">Plant Disease</string>
+    <string name="plant_desc">Description</string>
+    <string name="plant_cause">Cause</string>
+    <string name="plant_solution">Solution</string>
+    <string name="plant_source">Source</string>
+    <string name="plant_writer">Writer</string>
+    <string name="img_back">Img Back</string>
+    <string name="error_login_format">Please correct your login format</string>
 </resources>
